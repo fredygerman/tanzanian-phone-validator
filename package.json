@@ -1,7 +1,7 @@
 {
   "name": "tanzanian-phone-validator",
   "version": "1.0.0",
-  "description": "Phone Number Validaiton for Tanzanian.",
+  "description": "Phone Number Validation for Tanzanian.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/fredygerman/tanzanian-phone-validator.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Fredy German Mgimba",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/fredygerman/tanzanian-phone-validator/issues"
