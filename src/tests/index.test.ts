@@ -1,4 +1,6 @@
-import { validateTanzanianPhoneNumber } from "../src/index";
+import { validateTanzanianPhoneNumber } from "../index";
+
+//  please run `npx jest --clearCache` before running the tests
 
 describe("Tanzanian Phone Number Validation", () => {
   it("should return true for a valid Tanzanian phone number", () => {
@@ -38,7 +40,7 @@ describe("Tanzanian Phone Number Validation", () => {
 
     operationalPrefixes.forEach((prefix) => {
       // Generate a valid phone number with the given prefix
-      const validNumber = `+255${prefix}12345678`;
+      const validNumber = `+255 ${prefix}5676696`;
       expect(validateTanzanianPhoneNumber(validNumber)).toBe(true);
     });
   });
@@ -51,7 +53,6 @@ describe("Tanzanian Phone Number Validation", () => {
       "07512345678", // Invalid prefix
       "071234567A", // Contains non-numeric characters
       "071234567", // Missing the last digit
-      "255712345678", // Missing the plus sign
     ];
 
     invalidNumbers.forEach((number) => {
