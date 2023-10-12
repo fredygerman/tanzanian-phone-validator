@@ -7,7 +7,7 @@ A simple npm package for validating Tanzanian phone numbers using regular expres
 You can install this package via npm:
 
 ```bash
-npm install tanzanian-phone-validation
+npm i tanzanian-phone-validator
 ```
 
 ## Usage
