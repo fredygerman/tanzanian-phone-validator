@@ -5,10 +5,10 @@ import { validateTanzanianPhoneNumber } from "../index";
 describe("Tanzanian Phone Number Validation", () => {
   it("should return true for a valid Tanzanian phone number", () => {
     const validNumbers = [
-      "+255712345678",
-      "0712345678",
-      "0612345678",
-      "0745678901",
+      "+255712345696",
+      "0712349878",
+      "0612345988",
+      "0745687901",
     ];
 
     validNumbers.forEach((number) => {
@@ -40,7 +40,7 @@ describe("Tanzanian Phone Number Validation", () => {
 
     operationalPrefixes.forEach((prefix) => {
       // Generate a valid phone number with the given prefix
-      const validNumber = `+255 ${prefix}5676696`;
+      const validNumber = `+255 ${prefix}4216996`;
       expect(validateTanzanianPhoneNumber(validNumber)).toBe(true);
     });
   });
