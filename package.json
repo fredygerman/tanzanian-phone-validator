@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/fredygerman/tanzanian-phone-validator#readme",
   "devDependencies": {
+    "@types/jest": "^29.5.5",
     "@types/node": "^20.7.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
