@@ -34,4 +34,4 @@ function extractMobilePrefix(mobileNumber: string): string | null {
 	}
 
 	return null; // Return null if no valid prefix is found
-}
+
