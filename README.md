@@ -7,7 +7,7 @@ A simple npm package for validating Tanzanian phone numbers using regular expres
 You can install this package via npm:
 
 ```bash
-npm install tanzanian-phone-validation
+npm i tanzanian-phone-validator
 ```
 
 ## Usage
@@ -97,7 +97,7 @@ Note : this package does not validate for Operators which are not in Operation n
 | Prefix | Operator                                          | Trading as | Operational[1] |
 | ------ | ------------------------------------------------- | ---------- | -------------- |
 | 61     | Viettel Tanzania Limited                          | halotel    | yes            |
-| 62     | Viettel Tanzania Limited                          | halotel    | no             |
+| 62     | Viettel Tanzania Limited                          | halotel    | yes            |
 | 63     | Mkulima African Telecommunication Company Limited | Amotel     | no             |
 | 64     | Wiafrica Tanzania Limited                         | CooTel     | no             |
 | 65     | MIC Tanzania Limited                              | tiGo       | yes            |
