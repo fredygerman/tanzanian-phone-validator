@@ -16,17 +16,35 @@ You can check an example of this library [Here](https://tanzania-phone-validator
 
 Here is how it look like:
 
-![image](https://github.com/fredygerman/tanzanian-phone-validator/blob/main/screenshots/ScreenShot1.png?raw=true)
+![image](https://github.com/fredygerman/tanzanian-phone-validator/blob/main/screenshots/ScreenShot.png?raw=true)
 
 ## Usage
 
-Import the isValidPhoneNumber function from the package to validate Tanzanian phone numbers in your project. Here are some usage examples with different validation libraries:
+Use the `isValidPhoneNumber` function to validate a phone number. It returns true if the phone number is valid and false otherwise.
+
+Use the `getPhoneNumberDetails` function to get information about a phone number. It returns an object various information about the phone number as shown below:
+
+```js
+const results = {
+  isValid: true,
+  telecomCompanyDetails: {
+    prefix: 76,
+    company: "Vodacom Tanzania Limited",
+    brand: "Vodacom",
+    operational: "yes",
+  },
+};
+```
+
+## Usage with validation libraries
+
+Here are some usage examples with different validation libraries:
 
 ### Using Yup
 
 ```js
 const yup = require("yup");
-import { validateTanzanianPhoneNumber } from "tanzanian-phone-validator";
+import { isValidPhoneNumber } from "tanzanian-phone-validator";
 
 const schema = yup.object({
   phoneNumber: yup
@@ -86,7 +104,7 @@ try {
 You can also directly use the isValidPhoneNumber function:
 
 ```js
-const { isValidPhoneNumber } = require("tanzanian-phone-validation");
+import { validateTanzanianPhoneNumber } from "tanzanian-phone-validator";
 
 const phoneNumber = "+255761234567";
 
