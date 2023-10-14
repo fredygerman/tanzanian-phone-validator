@@ -1,6 +1,6 @@
 {
   "name": "tanzanian-phone-validator",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Phone Number Validation for Tanzanian.",
   "main": "dist/index.js",
   "scripts": {
