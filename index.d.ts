@@ -1,3 +1,3 @@
 declare module "tanzanian-phone-validator" {
-  export function validateTanzanianPhoneNumber(phoneNumber: string): boolean;
+  export function isValidPhoneNumber(phoneNumber: string): boolean;
 }
