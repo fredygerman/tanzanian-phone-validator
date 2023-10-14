@@ -1,6 +1,7 @@
-import { validateTanzanianPhoneNumber } from "../index";
+import { isValidPhoneNumber, getPhoneNumberDetails } from "../index";
+import { PhoneNumberDetails } from "../types/general";
 
-//  please run `npx jest --clearCache` before running the tests
+// Please run `npx jest --clearCache` before running the tests
 
 describe("Tanzanian Phone Number Validation", () => {
   it("should return true for a valid Tanzanian phone number", () => {
@@ -12,7 +13,14 @@ describe("Tanzanian Phone Number Validation", () => {
     ];
 
     validNumbers.forEach((number) => {
-      expect(validateTanzanianPhoneNumber(number)).toBe(true);
+      expect(isValidPhoneNumber(number)).toBe(true);
+
+      const details: PhoneNumberDetails = getPhoneNumberDetails(
+        number
+      ) as PhoneNumberDetails;
+      expect(details.isValid).toBe(true);
+      expect(details.phoneNumberPrefix).toBeDefined();
+      expect(details.telecomCompanyDetails).toBeDefined();
     });
   });
 
@@ -39,9 +47,16 @@ describe("Tanzanian Phone Number Validation", () => {
     ];
 
     operationalPrefixes.forEach((prefix) => {
-      // Generate a valid phone number with the given prefix
       const validNumber = `+255 ${prefix}4216996`;
-      expect(validateTanzanianPhoneNumber(validNumber)).toBe(true);
+
+      expect(isValidPhoneNumber(validNumber)).toBe(true);
+
+      const details: PhoneNumberDetails = getPhoneNumberDetails(
+        validNumber
+      ) as PhoneNumberDetails;
+      expect(details.isValid).toBe(true);
+      expect(details.phoneNumberPrefix).toBeDefined();
+      expect(details.telecomCompanyDetails).toBeDefined();
     });
   });
 
@@ -56,7 +71,14 @@ describe("Tanzanian Phone Number Validation", () => {
     ];
 
     invalidNumbers.forEach((number) => {
-      expect(validateTanzanianPhoneNumber(number)).toBe(false);
+      expect(isValidPhoneNumber(number)).toBe(false);
+
+      const details: PhoneNumberDetails = getPhoneNumberDetails(
+        number
+      ) as PhoneNumberDetails;
+      expect(details.isValid).toBe(false);
+      expect(details.phoneNumberPrefix).toBe(null);
+      expect(details.telecomCompanyDetails).toBe(null);
     });
   });
 });
