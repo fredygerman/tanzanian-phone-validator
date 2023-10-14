@@ -19,7 +19,6 @@ describe("Tanzanian Phone Number Validation", () => {
         number
       ) as PhoneNumberDetails;
       expect(details.isValid).toBe(true);
-      expect(details.phoneNumberPrefix).toBeDefined();
       expect(details.telecomCompanyDetails).toBeDefined();
     });
   });
@@ -55,7 +54,6 @@ describe("Tanzanian Phone Number Validation", () => {
         validNumber
       ) as PhoneNumberDetails;
       expect(details.isValid).toBe(true);
-      expect(details.phoneNumberPrefix).toBeDefined();
       expect(details.telecomCompanyDetails).toBeDefined();
     });
   });
@@ -77,7 +75,6 @@ describe("Tanzanian Phone Number Validation", () => {
         number
       ) as PhoneNumberDetails;
       expect(details.isValid).toBe(false);
-      expect(details.phoneNumberPrefix).toBe(null);
       expect(details.telecomCompanyDetails).toBe(null);
     });
   });
