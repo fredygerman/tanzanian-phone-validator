@@ -1,9 +1,12 @@
 # Dependency directories
 node_modules/
 
-# Output directories
+# Output directories and compiled files
 dist/
 build/
+*.js
+*.js.map
+*.tsbuildinfo
 
 # Environment files
 .env
@@ -19,9 +22,3 @@ build/
 # User-specific files and directories
 .DS_Store
 Thumbs.db
-
-# Compiled TypeScript files
-*.js
-*.js.map
-*.d.ts
-*.tsbuildinfo
