@@ -20,7 +20,7 @@ Here is how it look like:
 
 ## Usage
 
-Import the validateTanzanianPhoneNumber function from the package to validate Tanzanian phone numbers in your project. Here are some usage examples with different validation libraries:
+Import the isValidPhoneNumber function from the package to validate Tanzanian phone numbers in your project. Here are some usage examples with different validation libraries:
 
 ### Using Yup
 
@@ -32,7 +32,7 @@ const schema = yup.object({
   phoneNumber: yup
     .string()
     .test("is-tanzanian", "Invalid Tanzanian phone number", (value) => {
-      return validateTanzanianPhoneNumber(value);
+      return isValidPhoneNumber(value);
     }),
 });
 
@@ -60,7 +60,7 @@ import { validateTanzanianPhoneNumber } from "tanzanian-phone-validator";
 const schema = z.object({
   phoneNumber: z.string().refine(
     (value) => {
-      return validateTanzanianPhoneNumber(value);
+      return isValidPhoneNumber(value);
     },
     {
       message: "Invalid Tanzanian phone number",
@@ -83,14 +83,14 @@ try {
 
 ### Direct usage (Node Js)
 
-You can also directly use the validateTanzanianPhoneNumber function:
+You can also directly use the isValidPhoneNumber function:
 
 ```js
-const { validateTanzanianPhoneNumber } = require("tanzanian-phone-validation");
+const { isValidPhoneNumber } = require("tanzanian-phone-validation");
 
 const phoneNumber = "+255761234567";
 
-if (validateTanzanianPhoneNumber(phoneNumber)) {
+if (isValidPhoneNumber(phoneNumber)) {
   console.log("Valid Tanzanian phone number.");
 } else {
   console.log("Invalid Tanzanian phone number.");

@@ -1,37 +1,30 @@
-import {TelecomCompany, telecomCompanies} from "./telecom-companies";
+import { extractMobilePrefix, getTelecomCompany } from "./helpers/general";
+import { tanzanianPhoneNumberRegex } from "./helpers/regex";
 
+/**
+ * Checks if a phone number is valid according to Tanzanian phone number rules.
+ * @param phoneNumber The phone number to validate.
+ * @returns True if the phone number is valid, false otherwise.
+ */
 export function isValidPhoneNumber(phoneNumber: string): boolean {
-	const tanzanianPhoneNumberRegex =
-		/^(?:\+?255|0)[-.\s]?(6[156789]|7[1345678])\d{7}$/;
-	return tanzanianPhoneNumberRegex.test(phoneNumber);
+  return tanzanianPhoneNumberRegex.test(phoneNumber);
 }
 
-export function validatePhoneNumber(
-	phoneNumber: string
-): TelecomCompany | null {
-	if (isValidPhoneNumber(phoneNumber)) {
-		const phoneNumberPrefix = extractMobilePrefix(phoneNumber);
+/**
+ * Gets details of a Tanzanian phone number.
+ * @param phoneNumber The phone number to get details for.
+ * @returns An object with information about the phone number.
+ */
+export function getPhoneNumberDetails(phoneNumber: string) {
+  const isValid = isValidPhoneNumber(phoneNumber);
+  const phoneNumberPrefix = isValid ? extractMobilePrefix(phoneNumber) : null;
+  const telecomCompanyDetails = phoneNumberPrefix
+    ? getTelecomCompany(phoneNumberPrefix)
+    : null;
 
-		const matchingCompany = telecomCompanies.find(
-			(company) => company.prefix.toString() === phoneNumberPrefix
-		);
-
-		return matchingCompany || null;
-	} else {
-		return null;
-	}
+  return {
+    isValid,
+    phoneNumberPrefix,
+    telecomCompanyDetails,
+  };
 }
-
-function extractMobilePrefix(mobileNumber: string): string | null {
-	// Regular expression to match the Tanzanian mobile number format
-	const tanzanianPhoneNumberRegex =
-		/^(?:\+?255|0)[-.\s]?(6[156789]|7[1345678])\d{7}$/;
-	const match = mobileNumber.match(tanzanianPhoneNumberRegex);
-
-	if (match && match.length >= 3) {
-		// The first capturing group (match[1]) contains the next two digits after "0" or "+255"
-		return match[1];
-	}
-
-	return null; // Return null if no valid prefix is found
-
