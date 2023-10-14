@@ -10,6 +10,14 @@ You can install this package via npm:
 npm i tanzanian-phone-validator
 ```
 
+## Example
+
+You can check an example of this library [Here](https://tanzania-phone-validator-playground.vercel.app/).
+
+Here is how it look like:
+
+![image](https://github.com/fredygerman/tanzanian-phone-validator/blob/main/screenshots/ScreenShot1.png?raw=true)
+
 ## Usage
 
 Import the validateTanzanianPhoneNumber function from the package to validate Tanzanian phone numbers in your project. Here are some usage examples with different validation libraries:
@@ -18,7 +26,7 @@ Import the validateTanzanianPhoneNumber function from the package to validate Ta
 
 ```js
 const yup = require("yup");
-const { validateTanzanianPhoneNumber } = require("tanzanian-phone-validation");
+import { validateTanzanianPhoneNumber } from "tanzanian-phone-validator";
 
 const schema = yup.object({
   phoneNumber: yup
@@ -47,7 +55,7 @@ schema
 
 ```js
 const { z } = require("zod");
-const { validateTanzanianPhoneNumber } = require("tanzanian-phone-validation");
+import { validateTanzanianPhoneNumber } from "tanzanian-phone-validator";
 
 const schema = z.object({
   phoneNumber: z.string().refine(
