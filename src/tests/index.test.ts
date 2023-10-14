@@ -1,8 +1,5 @@
-import {
-  isValidPhoneNumber,
-  getPhoneNumberDetails,
-  PhoneNumberDetails,
-} from "../index";
+import { isValidPhoneNumber, getPhoneNumberDetails } from "../index";
+import { PhoneNumberDetails } from "../types/general";
 
 // Please run `npx jest --clearCache` before running the tests
 

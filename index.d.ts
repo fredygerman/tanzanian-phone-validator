@@ -20,9 +20,9 @@ type PhoneNumberDetails =
       telecomCompanyDetails: null;
     };
 
-interface TelecomCompany {
+type TelecomCompany = {
   prefix: number;
   company: string;
   brand: string;
   operational: "yes" | "no";
-}
+};

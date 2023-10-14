@@ -10,9 +10,9 @@ export type PhoneNumberDetails =
       telecomCompanyDetails: null;
     };
 
-export interface TelecomCompany {
+export type TelecomCompany = {
   prefix: number;
   company: string;
   brand: string;
   operational: "yes" | "no";
-}
+};

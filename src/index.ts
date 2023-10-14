@@ -1,3 +1,5 @@
+import { TelecomCompany } from "./types/general";
+
 /**
  * Checks if a phone number is valid according to Tanzanian phone number rules.
  * @param phoneNumber The phone number to validate.
@@ -21,7 +23,6 @@ export function getPhoneNumberDetails(phoneNumber: string) {
 
   return {
     isValid,
-    phoneNumberPrefix,
     telecomCompanyDetails,
   };
 }
@@ -45,26 +46,6 @@ export function getTelecomCompany(
 //   regex
 export const tanzanianPhoneNumberRegex =
   /^(?:\+?255|0)[-.\s]?(6[1256789]|7[1345678])\d{7}$/;
-
-//   types
-export type PhoneNumberDetails =
-  | {
-      isValid: true;
-      phoneNumberPrefix: string;
-      telecomCompanyDetails: TelecomCompany;
-    }
-  | {
-      isValid: false;
-      phoneNumberPrefix: null;
-      telecomCompanyDetails: null;
-    };
-
-export interface TelecomCompany {
-  prefix: number;
-  company: string;
-  brand: string;
-  operational: "yes" | "no";
-}
 
 //  telecom-companies
 export const telecomCompanies: TelecomCompany[] = [
