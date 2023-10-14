@@ -7,6 +7,11 @@
     "strict": true,
     "esModuleInterop": true
   },
-  "include": ["src/**/*.ts", "index.d.ts"],
+  "include": [
+    "src/**/*.ts",
+    "index.d.ts",
+    "src/helpers/*.ts",
+    "src/types/*.ts"
+  ],
   "exclude": ["node_modules"]
 }
